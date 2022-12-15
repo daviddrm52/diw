@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Activity 4 - UD2 - David Rueda Madrid</title>
+</head>
+<body>
+    <div class="contenedor">
+        <form class="form" id="form">
+            <h2>User registration</h2>
+            <div class="form-control">
+                <label for="nombreUsuario">Username</label>
+                <input type="text" id="username" placeholder="Insert username...">
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Insert email...">
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Insert password...">
+            </div>
+            <div class="form-control">
+                <label for="fileUpload"> Select an image please:</label>
+                <input type="file" id="fileUpload" accept="image/png, image/gif, image/jpeg">
+            </div>
+            <div>
+                <input type="hidden" id="submitData">
+                <button onclick="addUser(user);">Submit</button>
+            </div>
+        </form>
+        <div>
+
+        </div>
+        <div>
+            <h2>List of users in the database</h2>
+            <button onclick="getAllUsers();">List users</button>
+            <div id=""></div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

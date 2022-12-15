@@ -1,0 +1,12 @@
+nav {
+  background-color: purple;
+  text-align: center;
+  margin: 10px;
+  font-family: sans-serif;
+  padding: 10px;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: white;
+}

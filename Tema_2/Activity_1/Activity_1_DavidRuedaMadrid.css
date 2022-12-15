@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(./Ubuntu-Regular.ttf);
+}
+
+body{
+    background-image: url(./g-vnap-virgin-atlantic-airways-airbus-a340-642_PlanespottersNet_1027861_55de0bf1aa_o.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+
+#introduction{
+    font-family: Ubuntu;
+    text-align: center;
+    color: orange;
+}
+
+#userForm{
+    font-family: Ubuntu;
+    opacity: 0.9;
+    text-align: center;
+    background-color: aliceblue;
+    padding: 5px;
+    margin: 5px;
+}
+input{
+    align-items: center;
+}

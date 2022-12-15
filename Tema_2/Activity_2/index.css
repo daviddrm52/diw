@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(./Ubuntu-Regular.ttf);
+}
+body{
+    font-family: Ubuntu;
+    height: 8.5in;
+}
+header{
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    background-color: antiquewhite;
+}
+main{
+    position: fixed;
+    width: auto;
+    height: auto;
+    top: 10%;
+    right: 0;
+    bottom: 5%;
+    left: 15em;
+    background:
+    linear-gradient(135deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+    linear-gradient(225deg, #708090 21px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+    background-color:#708090;
+    background-size: 64px 128px;
+}
+aside{
+    position: fixed;
+    width: 15em;
+    height: auto;
+    top: 10%;
+    right: 0;
+    bottom: 5%;
+    left: 0;
+    background-color: antiquewhite;
+}
+footer{
+    width: 100%;
+    position: fixed;
+    top: 95%;
+    bottom: 0;
+    right: 0;
+    background-color: antiquewhite;
+    text-align: center;
+}
+.cabezera{
+    text-align: center;
+}
+#enlace{
+    color: black;    
+    padding: 5px;
+    margin: 5px;
+}
+a{
+    color: black;
+    text-decoration: none;  
+    margin: 10px; 
+}
+a:hover{
+    color: orange;
+}
+ul li{
+    list-style-type: none;
+}
+div.imagen-producto{
+    width: 24%;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    display: inline-block;
+}
+div.texto-imagen{
+    text-align: center;
+    padding: 10px 20px;
+}
+div.product-naming{
+    background-color: lightgrey;
+    padding: 10px;
+}
+img {
+    border-radius: 8px;
+}

@@ -1,0 +1,34 @@
+.container, .container_fluid {
+    background-color:mediumseagreen;
+    color: white;
+    text-align: center;
+    height: 100px;
+}
+
+.container_fluid{
+    background-color: blue;
+}
+
+.black{
+    background-color: black;
+    height: 100px;
+}
+
+.yellow{
+    background-color: yellow;
+    height: 100px;
+    color: black;
+}
+
+.left{
+    text-align: left;
+}
+
+.dl{
+    height: 26px;
+    background-color: purple;
+}
+
+.row{
+    height: 200px;
+}

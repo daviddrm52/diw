@@ -1,0 +1,102 @@
+/* Please use a Chromium Web browser for a better experience */
+
+/* Type of font for the page*/
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(./Ubuntu-Regular.ttf);
+}
+  
+body{
+    font-family: Ubuntu;
+    background-color: #ffb6c1;
+}
+
+header{
+    text-decoration: none;
+    background-color: #800080;
+    text-align: center;
+    color: #ffffff;
+}
+
+nav {
+    margin: 10px;
+    padding: 10px;
+}
+nav li a:hover {
+    background-color: #905a90;
+    margin: 5px;
+    padding: 5px;
+}
+nav img{
+    margin: auto;
+}
+
+main {
+    background-color: #6e3b6e;
+    padding: 25px;
+}
+
+ul, li{
+    border-radius: 15px;
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 10px solid transparent;
+}
+
+p {
+    text-align: center;
+    font-size: 15px;
+}
+
+audio::-webkit-media-controls-play-button, audio::-webkit-media-controls-panel {
+    background-color: #ffc0cb;
+    color: #ffc0cb;
+}
+
+button {
+    display: inline-block;
+    border: 2px solid transparent;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 20px;
+    font-family: Ubuntu;
+    background-color: pink;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+div.polaroid {
+    margin: auto;
+    width: 45%;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+}
+
+img {
+    border-radius: 8px;
+}
+
+div.container {
+    text-align: center;
+    padding: 10px 20px;
+}
+a {
+    cursor: pointer;
+}
+#mainText{
+    color: #ffffff;
+    text-align: center;
+}
+footer{
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    background-color: transparent;
+    text-align: center;
+    color: #000000;
+}

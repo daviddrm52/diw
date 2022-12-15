@@ -1,0 +1,288 @@
+//Estilo de la pagina en termino de colores y estilo de letra
+$headerColor: red;
+$bodyColor: wheat;
+$neutralColor: white;
+$mainColor: orange;
+$mobileColor: blue;
+$tabletColor: purple;
+$tableColor: salmon;
+$font: sans-serif;
+$noStyle: none;
+$textAlignment: center;
+$pointerType: pointer;
+
+//Colores de los botones
+$chaosInsurgency: green;
+$btn-error: red;
+$btn-warning: yellow;
+$btn-accepted: $chaosInsurgency;
+$btn-normal: white;
+
+//Breakpoints en caso de ser escritorio, tablet y movil
+$device-media-queries: (
+  mobile: '(max-width: 639px)',
+  tablet: '(max-width: 1024px) and (min-width: 640px)',
+  desktop: '(min-width: 1025px)'
+);
+
+//Versión de escritorio
+$target-device-media-query: map-get($device-media-queries, desktop);
+
+@media #{$target-device-media-query} {
+  header{
+    background-color: $headerColor;
+    text-align: $textAlignment;
+    color: $neutralColor;
+  }
+  body{
+    background-color: $neutralColor;
+  }
+  nav{
+    margin: 15px;
+    padding: 15px;
+  }  
+  main{
+    background-color: $bodyColor;
+    padding: 25px;
+  }
+  p{
+    text-decoration:overline;
+    text-align: $textAlignment;
+    font-size: 25px;
+  }
+  ul, li{
+    display: inline-block;
+    border: 10px solid transparent;
+  }
+  table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid $bodyColor;
+    border-collapse: collapse;
+    text-align: $textAlignment;
+    padding: 10px;
+  }
+  table th{
+    background-color: $headerColor;
+  }
+  .active{
+    background-color: royalblue;
+  }
+  nav{
+    li{
+      a{
+        &:hover{
+          background-color: rgb(146, 91, 146);
+        }
+      }
+    }
+  }
+  @for $i from 1 through 4{
+    @if ($i%2==0){
+      tr:nth-child(#{$i}){
+        background-color: #F5BFB6;
+      }
+    }@else{
+      tr:nth-child(#{$i}){
+        background-color: #FAADD3;
+      }
+    }
+  }
+}
+
+//Versión de tablets
+$target-device-media-query: map-get($device-media-queries, tablet);
+
+@media #{$target-device-media-query} {
+  header{
+    background-color: $tabletColor;
+    text-align: $textAlignment;
+    color: $neutralColor;
+  }
+  body{
+    background-color: $bodyColor;
+  }
+  nav{
+    margin: 10px;
+    padding: 10px;
+  }  
+  main{
+    background-color: $mainColor;
+    padding: 15px;
+  }
+  p{
+    text-decoration:line-through;
+    text-align: $textAlignment;
+    font-size: 25px;
+  }
+  ul, li{
+    display: inline-block;
+    border: 10px solid transparent;
+  }
+  table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid $mainColor;
+    border-collapse: collapse;
+    text-align: $textAlignment;
+    padding: 5px;
+  }
+  table th{
+    background-color: #EF7DFF;
+  }
+  .active{
+    background-color: lightpink;
+  }
+  nav{
+    li{
+      a{
+        &:hover{
+          background-color: rgb(146, 91, 146);
+        }
+      }
+    }
+  }
+  @for $i from 1 through 4{
+    @if ($i%2==0){
+      tr:nth-child(#{$i}){
+        background-color: #F5BFB6;
+      }
+    }@else{
+      tr:nth-child(#{$i}){
+        background-color: #FAADD3;
+      }
+    }
+  }
+}
+
+//Versión para dispositivos moviles
+$target-device-media-query: map-get($device-media-queries, mobile);
+
+@media #{$target-device-media-query} {
+  header{
+    background-color: $mobileColor;
+    text-align: $textAlignment;
+    color: $neutralColor;
+  }
+  body{
+    background-color: black;
+  }
+  nav{
+    margin: 5px;
+    padding: 5px;
+  }
+  main{
+    background-color: gray;
+    padding: 15px;
+  }
+  p{
+    text-decoration:underline;
+    text-align: $textAlignment;
+    font-size: 25px;
+  }
+  ul, li{
+    border: 10px solid transparent;
+  }
+  table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid gray;
+    border-collapse: collapse;
+    text-align: $textAlignment;
+    padding: 5px;
+  }
+  table th{
+    background-color: #333333;
+    color: $neutralColor;
+  }
+  .active{
+    background-color: turquoise;
+  }
+  nav{
+    li{
+      a{
+        &:hover{
+          background-color: lightblue;
+        }
+      }
+    }
+  }
+  @for $i from 1 through 4{
+    @if ($i%2==0){
+      tr:nth-child(#{$i}){
+        background-color: #949494;
+        color:$neutralColor;
+      }
+    }@else{
+      tr:nth-child(#{$i}){
+        background-color: #D4D4D4;
+      }
+    }
+  }
+}
+
+//Fuente de letra personalizada
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(./Ubuntu-Regular.ttf);
+}
+
+//Ajustes que se comparten en todas las variantes
+body{
+  font-family: Ubuntu;
+}
+.btn {
+  display: inline-block;
+  border: 2px solid black;
+  margin: 8px;
+  padding: 8px;
+  font-family: Ubuntu;
+}
+header{
+  text-decoration: $noStyle;
+}
+ul, li{
+  list-style-type: $noStyle;
+  text-align: $textAlignment;
+  margin: 0;
+  padding: 0;
+}
+
+//Interpolaciones (Se que no estan bien, no he tenido tiempo de modificarlo) 
+@mixin interpolation($btn-error){
+  background-color: $btn-error;
+}
+
+@mixin interpolation($btn-warning){
+  background-color: $btn-warning;
+}
+
+@mixin interpolation($btn-accepted){
+background-color: $btn-accepted;
+}
+
+@mixin interpolation($btn-normal){
+background-color: $btn-normal;
+}
+
+//Cambio de estilo en los botones
+span.btn.btn-error {
+  @include interpolation($btn-error);
+  cursor: $pointerType;
+}
+
+a.btn.btn-warning {
+@include interpolation($btn-warning);
+cursor: $pointerType;
+}
+
+input.btn.btn-accepted {
+@include interpolation($btn-accepted);
+cursor: $pointerType;
+}
+
+div.btn.btn-normal {
+@include interpolation($btn-normal);
+width: 55px;
+cursor: $pointerType;
+}

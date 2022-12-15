@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Activity 2 - UD3 - David Rueda Madrid</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="img">
+                <img id="imgInicio" src="./img/AvTalk_White-Converted-copy.svg" alt="AvTalkLogo" width="5%">
+            </div>
+            <div>
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>Podcasts</a></li>
+                    <li><a>About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h1 id="mainText">Welcome to the AvTalk Aviation Podcast</h1>
+            <p id="mainText">An aviation podcast by aviation geeks for anyone who looks up when they hear an airplane fly overhead. Listen in as Ian Petchenik and Jason Rabinowitz bring you aviation news, views, and special guests every Friday. If you’re a new avgeek or just can’t get enough aviation in your life, get your avgeek fix with us.</p>
+        </div>
+        <div class="podcastCard">
+            <section class="podcastControl">
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>Podcast player</b></p>
+                        <audio id="audio" controls>
+                            <source id="audioSource" src="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_190.mp3" type="audio/mp3">
+                            Your browser does not support HTML audio.
+                        </audio> <br>
+                        <button onclick="rewindAudio()"><span class="material-symbols-outlined">replay_10</span></button>
+                        <button onclick="pauseAudio()"><span class="material-symbols-outlined">pause</span></button>
+                        <button onclick="playAudio()"><span class="material-symbols-outlined">play_arrow</span></button>
+                        <button onclick="stopAudio()"><span class="material-symbols-outlined">stop</span></button>
+                        <button onclick="forwardAudio()"><span class="material-symbols-outlined">forward_10</span></button>
+                    </div>
+                    <div class="container">
+                        <button id="avTalk190" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_190.mp3">AvTalk Episode 190</button>
+                        <button id="avTalk189" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_189.mp3">AvTalk Episode 189</button>
+                        <button id="avTalk188" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_188.mp3">AvTalk Episode 188</button>
+                        <button id="avTalk187" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_187.mp3">AvTalk Episode 187</button>
+                        <button id="avTalk186" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_186.mp3">AvTalk Episode 186</button>
+                        <button id="avTalk185" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_185.mp3">AvTalk Episode 185</button>
+                        <button id="avTalk184" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_184.mp3">AvTalk Episode 184</button>
+                        <button id="avTalk183" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_183.mp3">AvTalk Episode 183</button>
+                        <button id="avTalk182" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_182.mp3">AvTalk Episode 182</button>
+                        <button id="avTalk181" audio="https://media.blubrry.com/avtalk/b/content.blubrry.com/avtalk/AvTalk_181.mp3">AvTalk Episode 181</button>
+                    </div>
+                </div>
+            </section>
+            <div>
+                <h2 id="mainText">Latest podcasts</h2>
+            </div>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 190</b></p>
+                    </div>
+                    <img src="./img/avTalk_190.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>Would you like to play a game?</b></p>
+                        <p>On this episode of AvTalk, we have a lot of news to catch up on after last week’s episode solely focused on Boeing’s future. 
+                            And Ian and Jason preview an avgeek trivia game that you can play on the show! 
+                            If you’d like to play on next week’s show, send us an email.</p>
+                        </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 189</b></p>
+                    </div>
+                    <img src="./img/avTalk_189.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>Looking into Boeing’s Future</b></p>
+                        <p>On this episode of AvTalk, we’re joined by The Air Current’s editor-in-chief Jon Ostrower to parse the news from Boeing’s first investor day in four years last week. 
+                            We cover CEO Dave Calhoun’s comments that Boeing will not begin building a new airplane until at least the next decade and the status of Boeing’s current aircraft portfolio, including outstanding issues with the certification of the 737-7 and 737-10 MAX aircraft. 
+                            We also dig deeper and further back in time to understand how Boeing reached this point and how it might, just might, be able to climb its way back.
+
+                            If you’re trying to understand where Boeing sees itself in the commercial aviation market and the challenges to that vision, this is the episode you need to hear.</p>
+                        </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 188</b></p>
+                    </div>
+                    <img src="./img/avTalk_188.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>Harassed by a Drone</b></p>
+                        <p>On this episode of AvTalk, Ian is harassed by a mystery drone, Cathay Pacific resumes flying over Russia, and pilot Mark Vanhoenacker joins us to discuss his new book, Imagine a City.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 187</b></p>
+                    </div>
+                    <img src="./img/avTalk_187.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>Korean Air goes off-roading</b></p>
+                        <p>On this week’s episode of AvTalk, a Korean Air A330 overruns the runway while attempting to land in Cebu. And a Cuban pilot flies his An-2 crop duster to Florida, 20 feet above the ocean.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 186</b></p>
+                    </div>
+                    <img src="./img/avTalk_186.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>Unexpected runway</b></p>
+                        <p>On this episode of AvTalk, the FAA tells Boeing to get its act together if it ever wants to certify the 737-7 MAX, let alone by the end of the year and another pilot union weighs in on certification deadline extension. Plus, a close call in Chicago as a United flight making an emergency landing lands on an “unexpected runway.”</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 185</b></p>
+                    </div>
+                    <img src="./img/avTalk_185.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>Wheel’s Away!</b></p>
+                        <p>On this episode of AvTalk, a Boeing Dreamlifter loses a wheel, the fate of the 737-7 and -10 MAX remains firmly on the ground, and we welcome back Airline Weekly editor Edward Russell to fill us in on Delta and Joby’s new agreement for eVTOL operations.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 184</b></p>
+                    </div>
+                    <img src="./img/avTalk_184.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>The life of an airline dispatcher</b></p>
+                        <p>On this week’s episode of AvTalk, airline dispatcher Michael Karrels joins us to talk about his work at a legacy carrier in the US and some of the differences in dispatching around the world. Plus, the FAA finalizes rules extending cabin crew rest, and we close the show with a story from the early days of air traffic control.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 183</b></p>
+                    </div>
+                    <img src="./img/avTalk_183.jpeg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>Closing down, Opening up</b></p>
+                        <p>On this week’s episode of AvTalk, we look at the aviation effects of Hurricane Ian, check in on ICAO’s 41st assembly in Montreal, and try to understand how a rumor took off before we even knew it was on the runway.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 182</b></p>
+                    </div>
+                    <img src="./img/avTalk_182.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>Electricity in the air</b></p>
+                        <p>On this episode of AvTalk, American Airlines announces a major cabin refit and the end of international first class, prices for flights departing Russia skyrocket after Putin announces the mobilization of reservists, and electric aircraft makers have a mixed week.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="polaroid">
+                    <div class="container">
+                        <p><b>AvTalk Episode 181</b></p>
+                    </div>
+                    <img src="./img/avTalk_181.jpg" width="100%" style="background-color: #000000;">
+                    <div class="container">
+                        <p><b>The Queen’s flight</b></p>
+                        <p>The flight carrying the coffin of Queen Elizabeth II shattered the record for the most tracked flight of all time, nearly doubling the record set just last month by Nancy Pelosi. We talk about the records the Queen’s last flight set, how it affected Flightradar24, and what’s happening behind the scenes to continue upgrades to Flightradar24 infrastructure. We also discuss United and Emirates’ new codeshare and interline agreement and preview a few important upcoming dates for the aviation industry. Plus, how a freight train derailment led to canceled flights at an airport nearly 100 miles away.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p> For more information about the podcasts, <a href="https://www.flightradar24.com/blog/avtalk-podcast/">enter here</a>.</p>
+        </div>
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>Podcasts</a></li>
+            <li><a>About</a></li>
+        </ul>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
