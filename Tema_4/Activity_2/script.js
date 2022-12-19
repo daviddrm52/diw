@@ -1,10 +1,17 @@
 $("#buttonOutcome").click(function() {
+    //Global variables
+    var titleOutcome;
+    var subtitleOutcome;
     //Variable for the first input
     var num1 = $('#num1').val();
+    var isNum1aNumber = false;
     //Comprobation of the first input
     if(isNaN(num1)){
+        titleOutcome = "";
+        subtitleOutcome = "";
         userMessageNum1 = "<p> You have entered: "+num1+" </p>";
         errorMessageNum1 = "<small> This input doesn't have a number, write a number please! </small>";
+        $('#message').html(finalText);
         $('#inputNum1').html(userMessageNum1);
         $('#errorNum1').html(errorMessageNum1);
     } else if(num1 == ""){
@@ -15,19 +22,20 @@ $("#buttonOutcome").click(function() {
     } else {
         userMessageNum1 = "<p> You have entered "+num1+". </p>";
         errorMessageNum1 = "";
+        num1Number = true;
         $('#inputNum1').html(userMessageNum1);
         $('#errorNum1').html(errorMessageNum1);
-        $('#errorNum1').prepend('<img src="./img/thumbsUp.jpg" width="30%"/>');
-        var outcome = parseInt(num1) + parseInt(num2);
-        finalText = "The outcome of "+num1+" + "+num2+" is: "+outcome;
-        $('#results').html(finalText);
+        $('#imageTrue1').prepend('<img src="./img/thumbsUp.jpg" width="30%"/>');
     }
     //Variable for the last input
     var num2 = $('#num2').val();
+    var num2Number = false;
     //Comprobation of the last input
     if(isNaN(num2)){
+        finalText = "";
         userMessageNum2 = "<p> You have entered: "+num2+" </p>";
         errorMessageNum2 = "<small> This input doesn't have a number, write a number please! </small>";
+        $('#message').html(finalText);
         $('#inputNum2').html(userMessageNum2);
         $('#errorNum2').html(errorMessageNum2);
     } else if(num2 == ""){
@@ -38,14 +46,18 @@ $("#buttonOutcome").click(function() {
     } else {
         userMessageNum2 = "<p> You have entered "+num2+". </p>";
         errorMessageNum2 = "";
+        num2Number = true;
         $('#inputNum2').html(userMessageNum2);
         $('#errorNum2').html(errorMessageNum2);
-        $('#errorNum2').prepend('<img src="./img/thumbsUp.jpg" width="30%"/>');
-        var outcome = parseInt(num1) + parseInt(num2);
-        finalText = "The outcome of "+num1+" + "+num2+" is: "+outcome;
-        $('#results').html(finalText);
+        $('#imageTrue2').prepend('<img src="./img/thumbsUp.jpg" width="30%"/>');
     }
-    /*var outcome = parseInt(num1) + parseInt(num2);
-    finalText = "The outcome of "+num1+" + "+num2+" is: "+outcome;
-    $('#results').html(finalText);*/
+    if(num1Number == true && num2Number == true){
+        $('#num1').val('');
+        $('#num2').val('');
+        var outcome = parseInt(num1) + parseInt(num2);
+        resultH3 = "Results";
+        finalText = "The outcome of "+num1+" + "+num2+" is: "+outcome;
+        $('#message').html(finalText);
+        $('#results').html(resultH3);
+    }
 });

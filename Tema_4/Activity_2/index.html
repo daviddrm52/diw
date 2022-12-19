@@ -9,27 +9,32 @@
 </head>
 <body>
     <div id="userForm">
+        <div id="errorMessages">
+            <div id="errorNum1"></div>
+            <div id="errorNum2"></div>
+        </div>
+        <br>
         <form action="">
             <h2>☆*: .｡. o(≧▽≦)o .｡.:*☆</h2>
             <div class="form-control">
                 <label for="num1">Write a number please: </label>
                 <input type="text" name="num1" id="num1">
                 <div id="inputNum1"></div>
-                <div id="errorNum1"></div>
+                <div id="imageTrue1"></div>
             </div>
             <div class="form-control">
                 <label for="num2"> Write another number please: </label>
                 <input type="text" name="num2" id="num2">
                 <div id="inputNum2"></div>
-                <div id="errorNum2"></div>
+                <div id="imageTrue2"></div>
             </div>
             <div class="form-control">
                 <button type="button" id="buttonOutcome">Calculate</button>
             </div>
         </form>
         <div id="userInfo">
-            <h3>Results</h3>
-            <div id="results"></div>
+            <h3 id="titleOutcome"></h3>
+            <div id="subtitleOutcome"></div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
