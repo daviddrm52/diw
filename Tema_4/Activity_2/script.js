@@ -9,55 +9,63 @@ $("#buttonOutcome").click(function() {
     if(isNaN(num1)){
         titleOutcome = "";
         subtitleOutcome = "";
-        userMessageNum1 = "<p> You have entered: "+num1+" </p>";
-        errorMessageNum1 = "<small> This input doesn't have a number, write a number please! </small>";
-        $('#message').html(finalText);
-        $('#inputNum1').html(userMessageNum1);
+        errorMessageNum1 = "<p> ERROR: The first input doesn't have a number, write a number please! </p>";
+        $('#titleOutcome').html(titleOutcome);
+        $('#subtitleOutcome').html(subtitleOutcome);
         $('#errorNum1').html(errorMessageNum1);
     } else if(num1 == ""){
-        userMessageNum1 = "";
-        errorMessageNum1 = "<small> This input is empty, write a number please! </small>";
-        $('#inputNum1').html(userMessageNum1);
+        titleOutcome = "";
+        subtitleOutcome = "";
+        errorMessageNum1 = "<p> ERROR: The first input is empty, write a number please! </p>";
+        $('#titeOutcome').html(titleOutcome);
+        $('#subtitleOutcome').html(subtitleOutcome);
         $('#errorNum1').html(errorMessageNum1);
     } else {
-        userMessageNum1 = "<p> You have entered "+num1+". </p>";
+        isNum1aNumber = true;
         errorMessageNum1 = "";
-        num1Number = true;
-        $('#inputNum1').html(userMessageNum1);
         $('#errorNum1').html(errorMessageNum1);
-        $('#imageTrue1').prepend('<img src="./img/thumbsUp.jpg" width="30%"/>');
     }
-    //Variable for the last input
+    $('#errorNum1').bind("mouseenter mouseleave", function() {
+        $(this).toggleClass("errorMessage");
+    });
+    //Variable for the second input
     var num2 = $('#num2').val();
-    var num2Number = false;
+    var isNum2aNumber = false;
     //Comprobation of the last input
     if(isNaN(num2)){
-        finalText = "";
-        userMessageNum2 = "<p> You have entered: "+num2+" </p>";
-        errorMessageNum2 = "<small> This input doesn't have a number, write a number please! </small>";
-        $('#message').html(finalText);
-        $('#inputNum2').html(userMessageNum2);
+        titleOutcome = "";
+        subtitleOutcome = "";
+        errorMessageNum2 = "<p> ERROR: The second input doesn't have a number, write a number please! </p>";
+        $('#titeOutcome').html(titleOutcome);
+        $('#subtitleOutcome').html(subtitleOutcome);
         $('#errorNum2').html(errorMessageNum2);
     } else if(num2 == ""){
-        userMessageNum2 = "";
-        errorMessageNum2 = "<small> This input is empty, write a number please! </small>";
-        $('#inputNum2').html(userMessageNum2);
+        titleOutcome = "";
+        subtitleOutcome = "";
+        errorMessageNum2 = "<p> ERROR: The second input is empty, write a number please! </p>";
+        $('#titleOutcome').html(titleOutcome);
+        $('#subtitleOutcome').html(subtitleOutcome);
         $('#errorNum2').html(errorMessageNum2);
     } else {
-        userMessageNum2 = "<p> You have entered "+num2+". </p>";
+        isNum2aNumber = true;
         errorMessageNum2 = "";
-        num2Number = true;
-        $('#inputNum2').html(userMessageNum2);
         $('#errorNum2').html(errorMessageNum2);
-        $('#imageTrue2').prepend('<img src="./img/thumbsUp.jpg" width="30%"/>');
     }
-    if(num1Number == true && num2Number == true){
+    $('#errorNum2').bind("mouseenter mouseleave", function() {
+        $(this).toggleClass("errorMessage");
+    });
+    if(isNum1aNumber == true && isNum2aNumber == true){
         $('#num1').val('');
         $('#num2').val('');
         var outcome = parseInt(num1) + parseInt(num2);
-        resultH3 = "Results";
-        finalText = "The outcome of "+num1+" + "+num2+" is: "+outcome;
-        $('#message').html(finalText);
-        $('#results').html(resultH3);
+        titleOutcome = "Results";
+        subtitleOutcome = "The outcome of "+num1+" + "+num2+" is: "+outcome;
+        $('#titleOutcome').html(titleOutcome);
+        $('#subtitleOutcome').html(subtitleOutcome);
+        
+
+        $('#subtitleOutcome').bind("mouseenter mouseleave", function() {
+            $(this).toggleClass("successMessage");
+        });
     }
 });
