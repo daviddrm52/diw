@@ -67,18 +67,17 @@ h2 {
     width: 100%;
 }
 
-#errorNum1, #errorNum2 {
-    color: #ff0000;
-}
-
 .errorMessage {
     color: #ffffff;
     background-color: #ff0000;
-
+    padding: 5px;
+    margin: 5px;
+    font-size: large;
 }
 
 .successMessage {
     color: #ffffff;
     background-color: #008000;
-    
+    margin: 10px;
+    font-size: 20px;
 }
