@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Droppable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #post-it { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #contenedor-rojo { width: 200px; height: 700px; padding: 0.5em; float: left; margin: 10px; background-color: lightcoral;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#post-it" ).draggable();
+    $( "#post-it" ).resizable();
+    $( "#contenedor-rojo" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Objetivo entregado!" );
+      }
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="post-it" class="ui-widget-content">
+  <p>Texto de ejemplo, hohohoho</p>
+</div>
+ 
+<div id="contenedor-rojo" class="ui-widget-header">
+  <p>Arrastre aqui</p>
+</div>
+ 
+
+ 
+</body>
+</html>
