@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    font-family: Ubuntu;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    padding: 20px;
+    background-color: aquamarine;
+}
+
+#post-it-naranja {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(255, 211, 129);
+    align-items: center;
+    padding: 0.5em;
+    /*margin: 10px 10px 10px 0;*/
+}
+
+#post-it-rojo {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(242, 133, 133);
+    align-items: center;
+    padding: 0.5em;
+    /*margin: 10px 10px 10px 0;*/
+}
+
+#contenedor-rojo {
+    width: 200px;
+    height: 700px;
+    padding: 0.5em;
+    float: right;
+    margin: 10px;
+    background-color:red;
+}
+
+#contenedor-naranja {
+    width: 200px;
+    height: 700px;
+    padding: 0.5em;
+    float: right;
+    margin: 10px;
+    background-color:orange;
+}
+
+#btn-postit{
+    float: right;
+}
+button{
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    font-family: Ubuntu;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btn-close:hover{
+    background-color: red;
+}
+
+#btn-naranja:hover{
+    background-color: orange;
+}
+#btn-rojo:hover{
+    background-color: red;
+}
