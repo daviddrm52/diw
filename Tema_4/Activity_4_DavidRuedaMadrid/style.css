@@ -11,7 +11,7 @@ header{
     background-color: aquamarine;
 }
 
-#post-it-naranja {
+.post-it-naranja {
     width: 200px;
     height: 100px;
     background-color: rgb(255, 211, 129);
@@ -20,7 +20,25 @@ header{
     /*margin: 10px 10px 10px 0;*/
 }
 
-#post-it-rojo {
+.post-it-naranja-min {
+    width: 200px;
+    height: 30px;
+    background-color: rgb(255, 211, 129);
+    align-items: center;
+    padding: 0.5em;
+    /*margin: 10px 10px 10px 0;*/
+}
+
+.post-it-rojo {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(242, 133, 133);
+    align-items: center;
+    padding: 0.5em;
+    /*margin: 10px 10px 10px 0;*/
+}
+
+.post-it-rojo-min {
     width: 200px;
     height: 100px;
     background-color: rgb(242, 133, 133);
@@ -30,7 +48,7 @@ header{
 }
 
 #contenedor-rojo {
-    width: 200px;
+    width: 250px;
     height: 700px;
     padding: 0.5em;
     float: right;
@@ -39,7 +57,7 @@ header{
 }
 
 #contenedor-naranja {
-    width: 200px;
+    width: 250px;
     height: 700px;
     padding: 0.5em;
     float: right;
@@ -60,7 +78,7 @@ button{
     font-weight: bold;
 }
 
-#btn-close:hover{
+#btn-close-rojo:hover, #btn-close-naranja:hover{
     background-color: red;
 }
 
