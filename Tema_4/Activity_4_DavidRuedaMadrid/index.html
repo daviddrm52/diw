@@ -13,43 +13,37 @@
 </head>
 <body>
 <header>
-  <h2>¡Aplicación web para post-its!</h2>
-  <h4>Puede crear y arrastrar post-its de los dos diferentes colores que hay</h4>
-  <button id="btn-naranja">Crear post-it naranja</button>
-  <button id="btn-rojo">Crear post-it rojo</button>
+  <h2>Web aplication for post-its!</h2>
+  <h4>You can create and drag post-its of the two different colors that are available</h4>
+  <button id="btn-create-naranja">Create <b>orange</b> post-it</button>
+  <button id="btn-create-rojo">Create <b>red</b> post-it</button>
 </header>
 
 <div id="zona-entrega">
   <div id="contenedor-rojo" class="ui-widget-header">
-    <p>Arrastre aqui los post-it rojos</p>
+    <p>Move over here the red post-it</p>
   </div>
   <div id="contenedor-naranja" class="ui-widget-header">
     <p>Arrastre aqui los post-it naranjas</p>
   </div>
 </div>
 
-<div id="post-it-rojo" class="post-it-rojo">
-  <div id="btn-postit">
-    <button id="btn-min-rojo"><span class="material-symbols-outlined">minimize</span></button>
-    <button id="btn-close-rojo"><span class="material-symbols-outlined">close</span></button>
+<div class="post-it-area">
+  <div id="post-it-rojo" class="post-it-rojo">
+    <button id="btn-close-rojo" style="float: right; margin: 2px;"><span class="material-symbols-outlined">close</span></button>
+    <button id="btn-min-rojo" style="float: right; margin: 2px;"><span class="material-symbols-outlined">minimize</span></button>
+    <p></p>
   </div>
-  <p>Post-it rojo</p>
-</div>
-<div id="post-it-naranja" class="post-it-naranja">
-  <div id="btn-postit">
-    <button id="btn-min-naranja"><span class="material-symbols-outlined">minimize</span></button>
-    <button id="btn-close-naranja"><span class="material-symbols-outlined">close</span></button>
+  <div id="post-it-naranja" class="post-it-naranja">
+    <button id="btn-close-naranja" style="float: right; margin: 2px;"><span class="material-symbols-outlined">close</span></button>
+    <button id="btn-min-naranja" style="float: right; margin: 2px;"><span class="material-symbols-outlined">minimize</span></button>
+    <p></p>
   </div>
-  <p>Post-it naranja</p>
 </div>
 
-<div id="dialog-confirm" title="¿Eliminar post-it?" style="display: none">
-  <p><span style="float:left; margin:12px 12px 20px 0;"></span>Este post-it será eliminado. ¿Desea continuar?</p>
+<div id="dialog-confirm" title="Delete post-it?" style="display: none">
+  <p><span style="float:left; margin:12px 12px 20px 0;"></span>This post-it will be scrapped. Do you want to continue?</p>
 </div>
-
-<footer>
-
-</footer>
 
 </body>
 </html>

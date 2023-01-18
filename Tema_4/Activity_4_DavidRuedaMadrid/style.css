@@ -9,6 +9,7 @@
 header{
     padding: 20px;
     background-color: aquamarine;
+    text-align: center;
 }
 
 .post-it-naranja {
@@ -65,9 +66,6 @@ header{
     background-color:orange;
 }
 
-#btn-postit{
-    float: right;
-}
 button{
     display: inline-block;
     border: 2px solid transparent;
