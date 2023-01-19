@@ -14,7 +14,7 @@ header{
 
 .post-it-naranja {
     width: 200px;
-    height: 100px;
+    height: 200px;
     background-color: rgb(255, 211, 129);
     align-items: center;
     padding: 0.5em;
@@ -32,7 +32,7 @@ header{
 
 .post-it-rojo {
     width: 200px;
-    height: 100px;
+    height: 200px;
     background-color: rgb(242, 133, 133);
     align-items: center;
     padding: 0.5em;
@@ -79,10 +79,29 @@ button{
 #btn-close-rojo:hover, #btn-close-naranja:hover{
     background-color: red;
 }
+#btn-min-rojo:hover, #btn-min-naranja:hover{
+    background-color: lightblue;
+}
 
-#btn-naranja:hover{
+#btn-create-naranja:hover{
     background-color: orange;
 }
-#btn-rojo:hover{
+#btn-create-rojo:hover{
     background-color: red;
+}
+
+/* Textarea */
+#textarea-rojo{
+    width: 200px;
+    height: 160px;
+    background-color: transparent;
+    border-color: transparent;
+    resize: none;
+}
+#textarea-naranja{
+    width: 200px;
+    height: 160px;
+    background-color: transparent;
+    border-color: transparent;
+    resize: none;
 }

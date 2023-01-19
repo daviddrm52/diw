@@ -36,11 +36,6 @@ $( function() {
     }
   });
 
-  $( "#btn-max-rojo, #btn-max-naranja" ).on( "click", function( event ) {
-    event.preventDefault();
-    console.log("bing chiling");
-  } );
-
   $("#btn-close-naranja").on( "click", function( event ) {
     $( "#dialog-confirm" ).dialog({
       resizable: false,
@@ -78,15 +73,26 @@ $( function() {
   });
 
   $( "#btn-create-naranja" ).on( "click", function( event ) {
-    console.log("hung tao");
     jQuery('<div>', {
       id: 'post-it-naranja',
       class: 'post-it-naranja'
     }).appendTo('.post-it-area');
     $('.post-it-naranja').append('<button id="btn-close-naranja" style="float: right; margin: 2px;"><span class="material-symbols-outlined">close</span></button>');
     $('.post-it-naranja').append('<button id="btn-min-naranja" style="float: right; margin: 2px;"><span class="material-symbols-outlined">minimize</span></button>');
-    $('.post-it-naranja').append('<p> </p>');
+    $('.post-it-naranja').append('<textarea id="textarea-naranja"></textarea>');
+  });
+
+  $( "#btn-create-rojo" ).on( "click", function( event ) {
+    jQuery('<div>', {
+      id: 'post-it-rojo',
+      class: 'post-it-rojo'
+    }).appendTo('.post-it-area');
+    $('.post-it-rojo').append('<button id="btn-close-rojo" style="float: right; margin: 2px;"><span class="material-symbols-outlined">close</span></button>');
+    $('.post-it-rojo').append('<button id="btn-min-rojo" style="float: right; margin: 2px;"><span class="material-symbols-outlined">minimize</span></button>');
+    $('.post-it-rojo').append('<textarea id="textarea-rojo"></textarea>');
   });
 });
 
-
+$( "#btn-max-rojo, #btn-max-naranja" ).on( "click", function( event ) {
+  event.preventDefault();
+} );
