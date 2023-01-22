@@ -1,5 +1,5 @@
-var client_id = '07af0ae96c9c4b6985b2859d8980f92b';
-var client_secret = '80261030ba494f25ade98dbf429c4207';
+var client_id = '';
+var client_secret = '';
 var access_token = '';
 
 //We create the Spotify class with the API to make the call to
