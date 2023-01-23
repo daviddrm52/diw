@@ -1,5 +1,5 @@
-var client_id = '';
-var client_secret = '';
+var client_id = '07af0ae96c9c4b6985b2859d8980f92b';
+var client_secret = '972e378686de4e76af4758bd1a8c4f87';
 var access_token = '';
 
 //We create the Spotify class with the API to make the call to
@@ -18,9 +18,17 @@ Spotify.prototype.getArtist = function (artist) {
     },
   }).done( function(response){
     console.log(response);
-    $("#results").append('<h2> Artist name <a href="'+response.artists.items[0].external_urls.spotify+'"> '+ response.artists.items[0].name+' </a> </h2>');
-    $("#results").append('<h3> Popularity of the artist: '+response.artists.items[0].popularity+'</h3> <br>');
-    $("#results").append("<img src="+response.artists.items[0].images[1].url+"> </img>");
+    $("#results").empty();
+    $.each(response.artists.items, function(index) {
+      $("#results").append('<h2 class="artist_name"> <a href="'+response.artists.items[index].external_urls.spotify+'"> '+ response.artists.items[index].name+' </a> </h2>');
+      $("#results").append('<h3 class="artist_popularity"> Popularity of the artist: '+response.artists.items[index].popularity+'</h3> <br>');
+      if($.isEmptyObject(response.artists.items[index].images)){
+        $("#results").append("<p> <b> There is no image for this artist! </b> </p>");
+      } else {
+        $("#results").append('<img class="artist-img" src="'+response.artists.items[index].images[1].url+'"> </img>');
+      }
+    });
+
   });
 };
 

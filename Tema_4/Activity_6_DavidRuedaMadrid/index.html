@@ -8,12 +8,23 @@
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-  <h2>Search by artist:</h2>
-  <input type="text" placeholder="Search artist" id="artistName"/>
-  <button id="bgetArtist">Info</button>
+  <div class="searchBox">
+    <div>
+      <h2>Search by artist:</h2>
+      <input type="text" placeholder="Search artist" id="artistName"/>
+      <button id="bgetArtist">Search...</button>
+    </div>
+    <div>
+      <h2>Search by song:</h2>
+      <input disabled type="text" placeholder="Search song" id="artistName"/>
+      <button disabled id="bgetArtist">Search...</button>
+    </div>
+  </div>
+
+  <br>
 
   <div id="results">
-
+    <p>In this area the results will be show</p>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
