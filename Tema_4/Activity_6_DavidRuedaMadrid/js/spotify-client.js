@@ -18,14 +18,15 @@ Spotify.prototype.getArtist = function (artist) {
     },
   }).done( function(response){
     console.log(response);
+    let placeholder = "https://cdn.jetphotos.com/full/5/45110_1673418008.jpg";
     $("#results").empty();
     $.each(response.artists.items, function(index) {
-      $("#results").append('<h2 class="artist_name"> <a href="'+response.artists.items[index].external_urls.spotify+'"> '+ response.artists.items[index].name+' </a> </h2>');
+      $("#results").append('<h2 class="artist_name"> '+ response.artists.items[index].name+' </h2>');
       $("#results").append('<h3 class="artist_popularity"> Popularity of the artist: '+response.artists.items[index].popularity+'</h3> <br>');
       if($.isEmptyObject(response.artists.items[index].images)){
-        $("#results").append("<p> <b> There is no image for this artist! </b> </p>");
+        $("#results").append('<a href="'+response.artists.items[index].external_urls.spotify+'"> <img class="artist-img" src="'+placeholder+'"> </img> </a>');
       } else {
-        $("#results").append('<img class="artist-img" src="'+response.artists.items[index].images[1].url+'"> </img>');
+        $("#results").append('<a href="'+response.artists.items[index].external_urls.spotify+'"> <img class="artist-img" src="'+response.artists.items[index].images[1].url+'"> </img> </a>');
       }
     });
 

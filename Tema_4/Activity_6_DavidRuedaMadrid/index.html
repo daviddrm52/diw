@@ -4,29 +4,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotify API data</title>
+  <title>Spotify Search with the API</title>
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-  <div class="searchBox">
-    <div>
-      <h2>Search by artist:</h2>
-      <input type="text" placeholder="Search artist" id="artistName"/>
-      <button id="bgetArtist">Search...</button>
+  <header>
+
+  </header>
+  <main>
+    <div class="searchBox">
+      <div>
+        <h2>Search by artist:</h2>
+        <input type="text" placeholder="Search artist" id="artistName"/>
+        <button id="bgetArtist">Search...</button>
+      </div>
+      <div>
+        <h2>Search by song:</h2>
+        <input disabled type="text" placeholder="Search song" id="artistName"/>
+        <button disabled id="bgetArtist">Search...</button>
+      </div>
     </div>
-    <div>
-      <h2>Search by song:</h2>
-      <input disabled type="text" placeholder="Search song" id="artistName"/>
-      <button disabled id="bgetArtist">Search...</button>
+    <br>
+    <div class="result-area">
+      <div id="results">
+        <p>In this area the results will be show</p>
+      </div>
     </div>
-  </div>
-
-  <br>
-
-  <div id="results">
-    <p>In this area the results will be show</p>
-  </div>
-
+  </main>
+  <footer>
+    
+  </footer>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/spotify-client.js"></script>
 </body>
