@@ -18,7 +18,7 @@ Spotify.prototype.getArtist = function (artist) {
     },
   }).done( function(response){
     console.log(response);
-    let placeholder = "https://cdn.jetphotos.com/full/5/45110_1673418008.jpg";
+    let placeholder = "https://www.scdn.co/i/_global/open-graph-default.png";
     $("#results").empty();
     $.each(response.artists.items, function(index) {
       $("#results").append('<h2 class="artist_name"> '+ response.artists.items[index].name+' </h2>');
