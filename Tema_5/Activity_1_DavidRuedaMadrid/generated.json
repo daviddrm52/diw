@@ -1,0 +1,94 @@
+[
+  {
+    "index": 0,
+    "product": "Pratt & Withney PW4000",
+    "hasStock": true,
+    "isActive": true,
+    "price": 234.42,
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pratt_%26_Whitney_PW4000_%284836578201%29.jpg/1024px-Pratt_%26_Whitney_PW4000_%284836578201%29.jpg",
+    "stock": 29,
+    "tags": [
+      "pw",
+      "boeing",
+      "airbus",
+      "widebody"
+    ]
+  },
+  {
+    "index": 1,
+    "product": "General Electric GE90",
+    "hasStock": true,
+    "isActive": true,
+    "price": 344.20,
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/GE90_B777-200LR.JPG/1024px-GE90_B777-200LR.JPG",
+    "stock": 11,
+    "tags": [
+      "ge",
+      "boeing",
+      "widebody"
+    ]
+  },
+  {
+    "index": 2,
+    "product": "Rolls Royce Trent XWB",
+    "hasStock": true,
+    "isActive": true,
+    "price": 264.03,
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/DSC_8010-F-WZGG_-_MSN_003_%2810512670144%29.jpg/1024px-DSC_8010-F-WZGG_-_MSN_003_%2810512670144%29.jpg",
+    "stock": 0,
+    "tags": [
+      "rr",
+      "airbus",
+      "widebody"
+    ]
+  },
+  {
+    "index": 3,
+    "product": "CFM International LEAP",
+    "hasStock": true,
+    "isActive": true,
+    "price": 289.17,
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/1/17/Airbus_A320neo_CFM_LEAP_nacelle.jpg",
+    "stock": 11,
+    "tags": [
+      "cfm",
+      "airbus",
+      "boeing",
+      "comac",
+      "narrowbody"
+    ]
+  },
+  {
+    "index": 4,
+    "product": "IAE V2500",
+    "hasStock": true,
+    "isActive": true,
+    "price": 194.08,
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/8/83/Large_engine_of_an_airbus.JPG",
+    "stock": 19,
+    "tags": [
+      "iae",
+      "airbus",
+      "embraer",
+      "mcdonnelldouglas",
+      "narrowbody"
+    ]
+  },
+  {
+    "index": 5,
+    "product": "Pratt & Withney PW1000G",
+    "hasStock": true,
+    "isActive": true,
+    "price": 211.94,
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Rafael_Luiz_Canossa_IMG_9975_%2829864028665%29.jpg/300px-Rafael_Luiz_Canossa_IMG_9975_%2829864028665%29.jpg",
+    "stock": 4,
+    "tags": [
+      "pw",
+      "airbus",
+      "embraer",
+      "bombardier",
+      "mistubishi",
+      "narrowbody"
+    ]
+  }
+]
