@@ -6,29 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Activity 1 - UD7 - David Rueda Madrid</title>
+    <title>Activity 2 - UD7 - David Rueda Madrid</title>
 </head>
 <body>
-    <header>
-        <h1>Motores de avión de segunda mano</h1>
-    </header>
-    <main>
-        <div id="app">
-            <div v-for="data in engineData">
-                <div class="product">
-                    <h2>{{data.product}}</h2>
+    <div id="app">
+        <header>
+            <h1>Aircraft engine shop</h1>
+            <div class="signin-area">
+                <button class="btn"> Sign-up </button>
+                <button class="btn"> Log-in </button>
+            </div>
+        </header>
+        <main>
+            <article v-for="data in engineData">
+                <div>
+                    <h1>{{data.product}}</h1>
                     <img class="images" :src="data.picture">
-                    <h3>Price: {{data.price}} €</h3>
+                    <h2>Price: {{data.price}} €</h2>
                     <h3>Items in stock: {{data.stock}}</h3>
                     <ul>
-                        <h4>Tags: </h4>
-                        <h5 v-for="tag in data.tags">{{tag}}</h5>
+                        <h4><i>Tags: <h5 v-for="tag in data.tags">{{tag}}</h5> </i></h4>
                     </ul>   
                 </div>
-            </div>
-        </div>
-
-        <script type="module">
+            </article>
+        </main>
+        <footer>
+            <h2>This is a footer, there's nothing important in here...</h2>
+        </footer>
+    </div>
+    
+    <script type="module">
         const { createApp } = Vue
 
         import json from './generated.json' assert { type: 'json' };
@@ -40,12 +47,6 @@
                 }
             }
         }).mount('#app');
-
-
-        </script>
-    </main>
-    <footer>
-
-    </footer>
+    </script>
 </body>
 </html>

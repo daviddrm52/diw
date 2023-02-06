@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Activity 1 - UD7 - David Rueda Madrid</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Aircraft engine shop</h1>
+        </header>
+        <main>
+            <article v-for="data in engineData">
+                <div>
+                    <h1>{{data.product}}</h1>
+                    <img class="images" :src="data.picture">
+                    <h2>Price: {{data.price}} €</h2>
+                    <h3>Items in stock: {{data.stock}}</h3>
+                    <ul>
+                        <h4><i>Tags: <h5 v-for="tag in data.tags">{{tag}}</h5> </i></h4>
+                    </ul>   
+                </div>
+            </article>
+        </main>
+        <footer>
+            <h2>This is a footer, there's nothing important in here...</h2>
+        </footer>
+    </div>
+    
+    <script type="module">
+        const { createApp } = Vue
+
+        import json from './generated.json' assert { type: 'json' };
+
+        createApp({
+            data() {
+                return {
+                    engineData: json
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
