@@ -6,6 +6,10 @@
     font-family: Ubuntu;
 }
 
+html, body {
+    height: 100%;
+}
+
 header{
     padding: 25px;
     text-align: center;
@@ -13,11 +17,11 @@ header{
     color: #ffffff;
 }
 
-.signin-area{
+.user-area{
     background-color: #5d46bb;
     border-radius: 10px;
     margin: 10px auto;
-    width: 210px;
+    width: 200px;
     padding: 10px;
     margin-top: 10px;
 }
@@ -29,30 +33,105 @@ header{
     border: transparent;
     margin: 5px;
     width: 100px;
-    height: 25px; 
+    height: 25px;
+    cursor: pointer;
 }
 
 body {
     background-color: #af8faf;
 }
 
+.items{
+    margin: 0px auto;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+}
+
 article{
     background-color: #ecdcec;
     margin: 15px;
-    width: 40%;
+    width: 300px;
     padding: 15px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 50px;
     box-shadow: 5px 5px 5px gray;
     display: inline-block;
 }
 
+.individual-item{
+    margin: 10px auto;
+    width: 100%;
+}
+
 .images {
-    width: 50%;
-    height: 50%;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
 }
+
+.sign-up{
+    background-color: #ecdcec;
+    margin: 15px auto;
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.sign-up input{
+    background-color: #ffffff;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border-color: transparent;
+    padding-top: 10px;
+    margin-top: 10px;
+}
   
+.log-in{
+    background-color: #ecdcec;
+    margin: 15px auto;
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.log-in input{
+    background-color: #ffffff;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+    text-align: center;
+    border-color: transparent;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.form-btn {
+    color: white;
+    background-color: #3512c3;
+    border-radius: 10px;
+    border: transparent;
+    margin: 5px;
+    width: 100px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.app{
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+footer, .push{
+    height: 50px;
+}
+
 footer{
     padding: 25px;
     text-align: center;

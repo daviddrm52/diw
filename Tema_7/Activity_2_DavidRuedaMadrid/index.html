@@ -11,25 +11,48 @@
 <body>
     <div id="app">
         <header>
-            <h1>Aircraft engine shop</h1>
-            <div class="signin-area">
-                <button class="btn"> Sign-up </button>
-                <button class="btn"> Log-in </button>
+            <h1>amogus shop</h1>
+            <div class="user-area">
+                <button class="btn" v-on:click="showSignUpForm"> <h4>Sign-up</h4> </button>
+                <button class="btn" v-on:click="showLoginForm"> <h4>Log-in</h4> </button>
             </div>
         </header>
         <main>
-            <article v-for="data in engineData">
-                <div>
-                    <h1>{{data.product}}</h1>
-                    <img class="images" :src="data.picture">
-                    <h2>Price: {{data.price}} €</h2>
-                    <h3>Items in stock: {{data.stock}}</h3>
-                    <ul>
-                        <h4><i>Tags: <h5 v-for="tag in data.tags">{{tag}}</h5> </i></h4>
-                    </ul>   
-                </div>
-            </article>
+            <div class="sign-up" v-show="signup">
+                <form action="">
+                    <h2> Sign-up </h2>
+                    <input type="email" name="email" id="email" placeholder="Email...">
+                    <input type="text" name="nickname" id="nickname" placeholder="Nickname...">
+                    <input type="password" name="password" id="password" placeholder="Password...">
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password...">
+                    <button class="form-btn" type="submit">Sign-up</button>
+                </form>
+            </div>
+
+            <div class="log-in" v-show="login">
+                <form action="">
+                    <h2> Log-in </h2>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                    <button class="form-btn" type="submit">Log-in</button>
+                </form>
+            </div>
+
+            <div class="items" v-show="scpitems">
+                <article v-for="data in scpItems">
+                    <div class="individual-item">
+                        <h1>{{data.product}}</h1>
+                        <img class="images" :src="data.picture">
+                        <h2>Price: {{data.price}} €</h2>
+                        <h3>Items in stock: {{data.stock}}</h3>
+                        <ul>
+                            <h4><i>Tags: <h5 v-for="tag in data.tags">{{tag}}</h5> </i></h4>
+                        </ul>   
+                    </div>
+                </article>
+            </div>
         </main>
+        <div class="push"></div>
         <footer>
             <h2>This is a footer, there's nothing important in here...</h2>
         </footer>
@@ -43,7 +66,22 @@
         createApp({
             data() {
                 return {
-                    engineData: json
+                    scpItems: json,
+                    signup: false,
+                    login: false,
+                    scpitems: true
+                }
+            },
+            methods: {
+                showSignUpForm: function() {
+                    this.signup = true;
+                    this.login = false;
+                    this.scpitems = false;
+                },
+                showLoginForm: function(){
+                    this.signup = false;
+                    this.login = true;
+                    this.scpitems = false;
                 }
             }
         }).mount('#app');

@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>App Vue</title>
-</head>
-<body>
-    <div id="app">{{ message }}</div>
+<html>
+  <head>
+    <title>VueJs Conditional rendering</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>  
+  </head>
+  <body>    
+    <div id = "app">
+      <button v-on:click="showdata" v-bind:style="styleobj">Click Me</button>
+      <span style="font-size:25px;"><b>{{ show }}</b></span>
+      <h1 v-if="show">This is h1 tag</h1>
+      <h2 v-else>This is h2 tag</h2>
+      <div v-show="show">
+        <b>V-Show:</b>
+        <img src = "https://hub.scpslgame.com/images/4/4a/ISeeYou.png" width = "150" height = "100" />
+      </div>
+    </div>
 
     <script>
-    const { createApp } = Vue
+      const { createApp } = Vue;
 
-    createApp({
+      var app = createApp({
         data() {
-        return {
-            message: 'Hello Vue!'
+          return {
+            show: true,
+            styleobj: {
+              backgroundColor: '#2196F3!important',
+              cursor: 'pointer',
+              padding: '8px 16px',
+              verticalAlign: 'middle',
+              marginRight: '10px',
+            }
+          }
+        },
+        methods: {
+          showdata: function() {
+            this.show = !this.show;
+          }
         }
-        }
-    }).mount('#app');
-
-    app.message = "SCP-173 terminated by Chaos Insurgency";
-    console.log(app.message);
+      }).mount('#app');        
     </script>
-</body>
+  </body>   
 </html>
