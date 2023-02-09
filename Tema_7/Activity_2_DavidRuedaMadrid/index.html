@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <header>
-            <h1>amogus shop</h1>
+            <h1><a href="./index.html">SCP Items shop</a></h1>
             <div class="user-area">
                 <button class="btn" v-on:click="showSignUpForm"> <h4>Sign-up</h4> </button>
                 <button class="btn" v-on:click="showLoginForm"> <h4>Log-in</h4> </button>
@@ -23,12 +23,12 @@
             <div class="sign-up" v-show="signup">
                 <form action="">
                     <h2> Sign-up </h2>
-                    <input type="email" v-model="email" id="email" placeholder="Email...">
-                    <input type="text" v-model="nickname" id="nickname" placeholder="Nickname...">
-                    <input type="password" v-model="password" id="password" placeholder="Password...">
+                    <input type="email" v-model="email" id="email" required placeholder="Email...">
+                    <input type="text" v-model="nickname" id="nickname" required placeholder="Nickname...">
+                    <input type="password" v-model="password" id="password" required placeholder="Password...">
                     <input type="password" v-model="confirmPassword" id="confirmPassword" placeholder="Confirm password...">
                     <div id="errorMessage"></div>
-                    <button class="form-btn" @click="signUpUser">Sign-up</button>
+                    <button class="form-btn" @click="signUpUser"><h4>Sign-up</h4></button>
                 </form>
             </div>
 
@@ -37,7 +37,8 @@
                     <h2> Log-in </h2>
                     <input type="email" v-model="email" id="email" placeholder="Email">
                     <input type="password" v-model="password" id="password" placeholder="Password">
-                    <button class="form-btn" @click="loginUser">Log-in</button>
+                    <div id="errorMessage"></div>
+                    <button class="form-btn" @click="logInUser"><h4>Log-in</h4></button>
                 </form>
             </div>
 
@@ -84,6 +85,10 @@
                     this.signup = true;
                     this.login = false;
                     this.scpitems = false;
+                    email = '';
+                    nickname = '';
+                    password = '';
+                    confirmPassword = '';
                 },
                 showLoginForm: function(){
                     this.signup = false;
@@ -91,15 +96,33 @@
                     this.scpitems = false;
                 },
                 signUpUser: function(e){
-                    localStorage.setItem("email", this.email);
-                    localStorage.setItem("nickname", this.nickname);
-                    localStorage.setItem("password", this.password);
-                    localStorage.setItem("confirmPassword", this.confirmPassword);
+                    if (this.email === '' || this.nickname === '' || this.password === '' || this.confirmPassword === '') {
+                        document.getElementById("errorMessage").innerHTML = "There are inputs empty!";
+                    } else {
+                        if(this.password === this.confirmPassword){
+                            var user = {nickname: this.nickname, password: this.password}
+                            localStorage.setItem(this.email, JSON.stringify(user));
+                            document.getElementById("errorMessage").innerHTML = "";
+                            e.preventDefault();
+                            this.signup = false;
+                            this.login = true;
+                            this.scpitems = false;
+                            console.log(localStorage.getItem(this.email))
+
+                        } else {
+                            document.getElementById("errorMessage").innerHTML = "The two passwords don't match!";
+                            e.preventDefault();
+                        }
+                    }
                 },
-                loginUser: function(e){
+                logInUser: function(e){
+                    if(this.email === localStorage.getItem(this.email)){
 
+                    } else {
+                        document.getElementById("errorMessage").innerHTML = "The email or the password are not correct!";
+                        e.preventDefault();
+                    }
                 }
-
             }
         }).mount('#app');
     </script>

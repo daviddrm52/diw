@@ -6,15 +6,16 @@
     font-family: Ubuntu;
 }
 
-html, body {
-    height: 100%;
-}
-
 header{
     padding: 25px;
     text-align: center;
     background-color: #3512c3;
     color: #ffffff;
+}
+
+header a{
+    text-decoration: none;
+    color: #ffffff
 }
 
 .user-area{
@@ -78,6 +79,8 @@ article{
     text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 5px gray;
+    display: flex;
+
 }
 
 .sign-up input{
@@ -112,6 +115,12 @@ article{
     margin-top: 10px;
 }
 
+#errorMessage {
+    color: #ff0000;
+    padding: 5px;
+    margin: 5px;
+}
+
 .form-btn {
     color: white;
     background-color: #3512c3;
@@ -123,13 +132,8 @@ article{
     cursor: pointer;
 }
 
-.app{
-    min-height: 100%;
-    margin-bottom: -50px;
-}
-
-footer, .push{
-    height: 50px;
+.push{
+    height: 100px;
 }
 
 footer{
@@ -137,5 +141,8 @@ footer{
     text-align: center;
     background-color: #3512c3;
     color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
