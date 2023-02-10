@@ -49,7 +49,7 @@ body {
     text-align: center;
 }
 
-article{
+.scpObject{
     background-color: #ecdcec;
     margin: 15px;
     width: 300px;
@@ -58,11 +58,6 @@ article{
     border-radius: 50px;
     box-shadow: 5px 5px 5px gray;
     display: inline-block;
-}
-
-.individual-item{
-    margin: 10px auto;
-    width: 100%;
 }
 
 .images {
