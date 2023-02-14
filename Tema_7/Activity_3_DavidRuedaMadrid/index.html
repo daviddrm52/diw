@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>Activity 3 - UD7 - David Rueda Madrid</title>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <h2>Enter a integer:</h2>
+            <input type="number" v-model="integer" id="integer">
+            <button @click="addInteger">Submit</button>
+        </form>
+        <div id="errorMessage"></div>
+        <Integer v-show="integer" v:for="int in Integer"></Integer>
+    </div>
+
+    <script type="module">
+        import Integer from "./Integer.js";
+        var numbersArray = [];
+
+        const { createApp } = Vue;
+
+        var app = createApp({
+            data() {
+                return {
+                    integer: false
+                }
+            },
+            components: {
+                Integer
+            },
+            methods: {
+                addInteger: function(e){
+                    e.preventDefault();
+                    var intForm = this.integer;
+                    if (intForm === ""){
+                        document.getElementById("errorMessage").innerHTML = "The input is empty!";
+                    } else {    
+                        this.integer = true;
+                        numbersArray.push(intForm);
+                        console.log(intForm);
+                        console.log(numbersArray);
+                    }
+                },
+                infoInteger: function(e){
+                    e.preventDefault();
+                },
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
