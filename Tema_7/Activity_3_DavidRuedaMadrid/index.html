@@ -16,18 +16,18 @@
             <button @click="addInteger">Submit</button>
         </form>
         <div id="errorMessage"></div>
-        <Integer v-show="integer" v:for="int in Integer"></Integer>
+        <Integer v-show="integer" v-bind:integer=""></Integer>
     </div>
 
     <script type="module">
         import Integer from "./Integer.js";
-        var numbersArray = [];
 
         const { createApp } = Vue;
 
         var app = createApp({
             data() {
                 return {
+                    numbersArray: [],
                     integer: false
                 }
             },

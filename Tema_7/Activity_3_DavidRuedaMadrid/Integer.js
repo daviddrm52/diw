@@ -5,7 +5,7 @@ export default {
     `
     <div>
         <h1> List of numbers </h1>
-        <button @click="$emit('infoInteger')">  </button>
+        <button @click="$emit('infoInteger')"> {{integer}} </button>
     </div>
     `,
 }
