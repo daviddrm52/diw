@@ -49,13 +49,11 @@
                         document.getElementById("errorMessage").innerHTML = "You have to enter a correct value";
                     } else {    
                         this.numbersArray.push(this.numInter);
-                    }
+                    };
                 },
                 selectedNumInter: function(e){
-                    console.log("entrado");
                     e.preventDefault();
                     this.selected = s;
-                    console.log(s);
                     document.getElementById("numSelected").innerHTML = "The number pressed is: "+ s +".";
                     
                 },
