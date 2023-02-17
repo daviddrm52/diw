@@ -5,18 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="./../index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Activity 3 - UD7 - David Rueda Madrid</title>
 </head>
 <body>
     <div id="app">
         <form>
             <h2>Enter a integer:</h2>
-            <input type="number" v-model="integer" id="integer">
-            <button @click="addInteger">Submit</button>
+            <input type="number" v-model="numInter">
+            <button @click="addNumInter">Submit</button>
+            <div id="errorMessage"></div>
         </form>
-        <div id="errorMessage"></div>
-        <Integer v-show="integer" v-bind:integer=""></Integer>
+        <Integer v-for="s in numbersArray" :key="s" :value="s" v-on:selected="selected"></Integer>
+        <div id="numSelected">
+
+        </div>
     </div>
 
     <script type="module">
@@ -28,27 +31,33 @@
             data() {
                 return {
                     numbersArray: [],
-                    integer: false
+                    selected: '',
+                    numInter: null
                 }
             },
             components: {
                 Integer
             },
             methods: {
-                addInteger: function(e){
+                addNumInter: function(e){
                     e.preventDefault();
-                    var intForm = this.integer;
-                    if (intForm === ""){
-                        document.getElementById("errorMessage").innerHTML = "The input is empty!";
+                    if (this.numInter == ""){
+                        document.getElementById("errorMessage").innerHTML = "The input is empty";
+                    } else if(this.numbersArray.includes(this.numInter)) {
+                        document.getElementById("errorMessage").innerHTML = "The number already exists";
+                    } else if(isNaN(this.numInter)) {
+                        document.getElementById("errorMessage").innerHTML = "You have to enter a correct value";
                     } else {    
-                        this.integer = true;
-                        numbersArray.push(intForm);
-                        console.log(intForm);
-                        console.log(numbersArray);
+                        this.numbersArray.push(this.numInter);
                     }
                 },
-                infoInteger: function(e){
+                selectedNumInter: function(e){
+                    console.log("entrado");
                     e.preventDefault();
+                    this.selected = s;
+                    console.log(s);
+                    document.getElementById("numSelected").innerHTML = "The number pressed is: "+ s +".";
+                    
                 },
             }
         }).mount('#app');

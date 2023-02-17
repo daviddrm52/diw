@@ -1,11 +1,17 @@
 export default {
     name: 'Integer',
-    props: ['int'],
+    props: {
+        value: Number
+    },
+    methods: {
+        selected: function(s){
+            this.$emit('selectedNumInter', s);
+        }
+    },
     template :
     `
     <div>
-        <h1> List of numbers </h1>
-        <button @click="$emit('infoInteger')"> {{integer}} </button>
+        <button @click="selectedNumInter"> {{value}} </button>
     </div>
     `,
 }
