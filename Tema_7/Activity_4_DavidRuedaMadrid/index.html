@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Activity 4 - UD7 - David Rueda Madrid</title>
+</head>
+<body>
+    <div id="app">
+        <component-header></component-header>
+        <main>
+            <component-login></component-login>
+            
+            <div class="sign-up" v-show="signup">
+                <form>
+                    <h2> Sign-up </h2>
+                    <input type="email" v-model="email" id="emailSignUp" required placeholder="Email...">
+                    <input type="text" v-model="nickname" id="nicknameSignUp" required placeholder="Nickname...">
+                    <input type="password" v-model="password" id="passwordSignUp" required placeholder="Password...">
+                    <input type="password" v-model="confirmPassword" id="confirmPasswordSignUp" placeholder="Confirm password...">
+                    <div id="errorMessage"></div>
+                    <button class="form-btn" @click="signUpUser"><h4>Sign-up</h4></button>
+                </form>
+            </div>
+            <div class="items" v-show="objects">
+                <scp-item v-for="item in scpItems" v-bind:item="item" class="scpObject"></scp-item>
+            </div>
+        </main>
+        <div class="push"></div>
+        <footer>
+            <h2>This is a footer, there's nothing important in here...</h2>
+        </footer>
+    </div>
+    
+    <script type="module">
+        import scpItem from "./js/scpItem.js";
+        import componentHeader from "./js/Header.js";
+        import componentLogin from "./js/Login.js";
+
+        const { createApp } = Vue
+
+        createApp({
+            data() {
+                return {
+                    scpItems: scpItems,
+                    signup: false,
+                    login: true,
+                    objects: false,
+                    //Inputs
+                    email: '',
+                    nickname: '',
+                    password: '',
+                    confirmPassword: ''
+                }
+            },
+            components: {
+                componentHeader, componentLogin, scpItem,
+            },
+            methods: {
+                showLogInForm: function(){
+                    this.signup = false;
+                    this.login = true;
+                    this.objects = false;
+                    this.email = '';
+                    this.password = '';
+                },
+                showSignUpForm: function() {
+                    this.signup = true;
+                    this.login = false;
+                    this.objects = false;
+                    this.email = '';
+                    this.nickname = '';
+                    this.password = '';
+                    this.confirmPassword = '';
+                },
+                signUpUser: function(e){
+                    if (this.email === '' || this.nickname === '' || this.password === '' || this.confirmPassword === '') {
+                        document.getElementById("errorMessage").innerHTML = "There are inputs empty!";
+                    } else {
+                        if(this.password === this.confirmPassword){
+                            var user = {nickname: this.nickname, password: this.password}
+                            localStorage.setItem(this.email, JSON.stringify(user));
+                            document.getElementById("errorMessage").innerHTML = "";
+                            e.preventDefault();
+                            this.signup = false;
+                            this.login = false;
+                            this.objects = true;
+                            console.log(localStorage.getItem(this.email));
+                            document.getElementById("userWelcome").innerHTML = "Welcome "+ JSON.parse(localStorage.getItem(this.email)).nickname+"!";
+
+                        } else {
+                            document.getElementById("errorMessage").innerHTML = "The two passwords don't match!";
+                            e.preventDefault();
+                        }
+                    };
+                },
+                //Terminar cuanto antes!
+                logInUser: function(e){
+                    console.log("Entrado");
+                    console.log(email);
+                    if(this.email === '' || this.password === ''){
+                        document.getElementById("errorMessage").innerHTML = "There are inputs empty!";
+                    } else {
+                        if(this.email == localStorage.getItem(this.email)){
+                            console.log("email verified");
+                            password = JSON.parse(localStorage.getItem(this.email)).nickname;
+                            console.log(password);
+                            e.preventDefault();
+                        } else {
+                            document.getElementById("errorMessage").innerHTML = "The email or the password are not correct!";
+                            e.preventDefault();
+                        }
+                    }
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
