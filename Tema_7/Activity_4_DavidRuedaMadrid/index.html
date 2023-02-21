@@ -13,19 +13,8 @@
     <div id="app">
         <component-header></component-header>
         <main>
-            <component-login></component-login>
-            
-            <div class="sign-up" v-show="signup">
-                <form>
-                    <h2> Sign-up </h2>
-                    <input type="email" v-model="email" id="emailSignUp" required placeholder="Email...">
-                    <input type="text" v-model="nickname" id="nicknameSignUp" required placeholder="Nickname...">
-                    <input type="password" v-model="password" id="passwordSignUp" required placeholder="Password...">
-                    <input type="password" v-model="confirmPassword" id="confirmPasswordSignUp" placeholder="Confirm password...">
-                    <div id="errorMessage"></div>
-                    <button class="form-btn" @click="signUpUser"><h4>Sign-up</h4></button>
-                </form>
-            </div>
+            <component-login v-show="login"></component-login>
+            <component-signup v-show="signup"></component-signup>
             <div class="items" v-show="objects">
                 <scp-item v-for="item in scpItems" v-bind:item="item" class="scpObject"></scp-item>
             </div>
@@ -40,6 +29,7 @@
         import scpItem from "./js/scpItem.js";
         import componentHeader from "./js/Header.js";
         import componentLogin from "./js/Login.js";
+        import componentSignup from "./js/Signup.js";
 
         const { createApp } = Vue
 
@@ -58,7 +48,7 @@
                 }
             },
             components: {
-                componentHeader, componentLogin, scpItem,
+                componentHeader, componentLogin, componentSignup, scpItem,
             },
             methods: {
                 showLogInForm: function(){

@@ -2,7 +2,7 @@ export default {
     name: 'componentLogin',
     props: [],
     template: `
-    <div class="log-in" v-show="login">
+    <div class="log-in">
         <form>
             <h2> Log-in </h2>
             <input type="email" v-model="email" id="emailLogin" placeholder="Email">

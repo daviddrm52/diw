@@ -36,12 +36,9 @@ nav li {
     float: right;
 }
   
-nav li button {
+nav li a {
     display: block;
     color: white;
-    background-color: #af8faf;
-    border: transparent;
-    border-radius: 10px;
     text-align: center;
     padding: 14px 16px;
     margin: 10px;
