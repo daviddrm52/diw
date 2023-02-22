@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/script.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
     <title>Activity 4 - UD7 - David Rueda Madrid</title>
 </head>
 <body>
     <div id="app">
         <component-header></component-header>
         <main>
-            <component-login v-show="login"></component-login>
-            <component-signup v-show="signup"></component-signup>
-            <div class="items" v-show="objects">
-                <scp-item v-for="item in scpItems" v-bind:item="item" class="scpObject"></scp-item>
-            </div>
+            <router-view></router-view>
         </main>
         <div class="push"></div>
         <footer>
@@ -26,88 +23,19 @@
     </div>
     
     <script type="module">
-        import scpItem from "./js/scpItem.js";
+        import router from "./router.js";
         import componentHeader from "./js/Header.js";
-        import componentLogin from "./js/Login.js";
-        import componentSignup from "./js/Signup.js";
 
-        const { createApp } = Vue
-
-        createApp({
+        const app = Vue.createApp({
             data() {
-                return {
-                    scpItems: scpItems,
-                    signup: false,
-                    login: true,
-                    objects: false,
-                    //Inputs
-                    email: '',
-                    nickname: '',
-                    password: '',
-                    confirmPassword: ''
-                }
+                return { }
             },
             components: {
-                componentHeader, componentLogin, componentSignup, scpItem,
-            },
-            methods: {
-                showLogInForm: function(){
-                    this.signup = false;
-                    this.login = true;
-                    this.objects = false;
-                    this.email = '';
-                    this.password = '';
-                },
-                showSignUpForm: function() {
-                    this.signup = true;
-                    this.login = false;
-                    this.objects = false;
-                    this.email = '';
-                    this.nickname = '';
-                    this.password = '';
-                    this.confirmPassword = '';
-                },
-                signUpUser: function(e){
-                    if (this.email === '' || this.nickname === '' || this.password === '' || this.confirmPassword === '') {
-                        document.getElementById("errorMessage").innerHTML = "There are inputs empty!";
-                    } else {
-                        if(this.password === this.confirmPassword){
-                            var user = {nickname: this.nickname, password: this.password}
-                            localStorage.setItem(this.email, JSON.stringify(user));
-                            document.getElementById("errorMessage").innerHTML = "";
-                            e.preventDefault();
-                            this.signup = false;
-                            this.login = false;
-                            this.objects = true;
-                            console.log(localStorage.getItem(this.email));
-                            document.getElementById("userWelcome").innerHTML = "Welcome "+ JSON.parse(localStorage.getItem(this.email)).nickname+"!";
-
-                        } else {
-                            document.getElementById("errorMessage").innerHTML = "The two passwords don't match!";
-                            e.preventDefault();
-                        }
-                    };
-                },
-                //Terminar cuanto antes!
-                logInUser: function(e){
-                    console.log("Entrado");
-                    console.log(email);
-                    if(this.email === '' || this.password === ''){
-                        document.getElementById("errorMessage").innerHTML = "There are inputs empty!";
-                    } else {
-                        if(this.email == localStorage.getItem(this.email)){
-                            console.log("email verified");
-                            password = JSON.parse(localStorage.getItem(this.email)).nickname;
-                            console.log(password);
-                            e.preventDefault();
-                        } else {
-                            document.getElementById("errorMessage").innerHTML = "The email or the password are not correct!";
-                            e.preventDefault();
-                        }
-                    }
-                }
+                componentHeader,
             }
-        }).mount('#app');
+        });
+        app.use(router);
+        app.mount('#app');
     </script>
 </body>
 </html>
