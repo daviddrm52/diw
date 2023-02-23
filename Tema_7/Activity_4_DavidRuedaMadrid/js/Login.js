@@ -3,24 +3,21 @@ export default {
     data() {
         return{
             email: '',
-            password: '',
+            password: ''
         }
     },
     methods: {
         logInUser: function(e){
-            console.log("Entrado");
-            console.log(email);
+            e.preventDefault();
             if(this.email === '' || this.password === ''){
                 document.getElementById("errorMessage").innerHTML = "There are inputs empty!";
             } else {
-                if(this.email == localStorage.getItem(this.email)){
-                    console.log("email verified");
-                    password = JSON.parse(localStorage.getItem(this.email)).nickname;
-                    console.log(password);
-                    e.preventDefault();
+                if(this.email == localStorage.key(this.email)){
+                    if(this.password == JSON.parse(localStorage.getItem(this.email)).password){
+                        this.$router.push("/products");
+                    }                    
                 } else {
                     document.getElementById("errorMessage").innerHTML = "The email or the password are not correct!";
-                    e.preventDefault();
                 }
             }
         }  

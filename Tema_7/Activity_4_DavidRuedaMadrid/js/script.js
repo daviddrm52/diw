@@ -1,4 +1,4 @@
-const scpItems = [
+const products = [
   {
     "index": 0,
     "product": "SCP-018",

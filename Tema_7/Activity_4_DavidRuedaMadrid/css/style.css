@@ -139,18 +139,3 @@ body {
     height: 25px;
     cursor: pointer;
 }
-
-.push{
-    height: 100px;
-}
-
-footer{
-    padding: 25px;
-    text-align: center;
-    background-color: #3512c3;
-    color: #ffffff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
