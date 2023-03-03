@@ -51,6 +51,12 @@ nav li a:hover {
     cursor: pointer;
 }
 
+nav #user_info{
+    color: #fff;
+    padding: 27px;
+    
+}
+
 body {
     background-color: #af8faf;
 }

@@ -14,7 +14,9 @@ export default {
             } else {
                 if(this.email == localStorage.key(this.email)){
                     if(this.password == JSON.parse(localStorage.getItem(this.email)).password){
+                        localStorage.setItem("user_logged", JSON.parse(localStorage.getItem(this.email)).nickname);
                         this.$router.push("/products");
+                        console.log(JSON.parse(localStorage.getItem(this.email)).nickname);
                     }                    
                 } else {
                     document.getElementById("errorMessage").innerHTML = "The email or the password are not correct!";

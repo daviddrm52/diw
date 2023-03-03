@@ -18,6 +18,8 @@ export default {
                     var user = {nickname: this.nickname, password: this.password}
                     localStorage.setItem(this.email, JSON.stringify(user));
                     document.getElementById("errorMessage").innerHTML = "";
+                    //Añadir localStorage para ver si hay un usuario logeado
+                    localStorage.setItem("user_logged", this.nickname);
                     this.$router.push("/products");
                 } else {
                     document.getElementById("errorMessage").innerHTML = "The two passwords don't match!";

@@ -22,10 +22,26 @@
 
         const app = Vue.createApp({
             data() {
-                return { }
+                return {
+                    user: null,
+                }
             },
             components: {
                 componentHeader,
+            },
+            methods: {
+                verifing_user: function(){
+                    let user = localStorage.getItem("user_logged");
+                    //console.log(user);
+                    if(user != null){
+                        this.$router.push("/products");
+                    } else if(user === "") {
+                        this.$router.push("/login");
+                    }
+                }
+            },
+            mounted(){
+                this.verifing_user();
             }
         });
         app.use(router);
