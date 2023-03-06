@@ -1,6 +1,13 @@
 export default {
     name: 'componentHeader',
-    emits: [],
+    data(){
+        return{
+            user: '',
+            loginBtn: false,
+            signUpBtn: false,
+            logoutBtn: false,
+        }
+    },
     methods: {
         goToLogin: function(){
             this.$router.push("/login");
@@ -8,8 +15,11 @@ export default {
         goToSignUp: function(){
             this.$router.push("/sign-up");
         },
-        gotToLogOut: function(){
-            localStorage.clear("user_logged");
+        goToLogout: function(){
+            localStorage.removeItem("user_logged");
+            let user = localStorage.getItem("user_logged");
+            console.log(user);
+            document.getElementById("user_info").innerHTML = "";
             this.$router.push("/login");
         },
         verifing_user: function(){
@@ -31,7 +41,7 @@ export default {
             <ul>
                 <li class="left"><h1><a href="./index.html">SCP Items shop</a></h1></li>
                 <li class="left"><h3 id="user_info"> </h3></li>
-                <li><a @click="goToLogOut"> <h3>Log-out</h3> </a></li>
+                <li><a @click="goToLogout"> <h3>Log-out</h3> </a></li>
                 <li><a @click="goToSignUp"> <h3>Sign-up</h3> </a></li>
                 <li><a @click="goToLogin"> <h3>Log-in</h3> </a></li>
             </ul>
