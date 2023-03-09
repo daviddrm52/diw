@@ -2,12 +2,22 @@ export default {
     name: 'componentHeader',
     props: ['userlogged'],
     emits: ['updateuserlogged'],
+    data() {
+        return{
+            btnLogin: false,
+            btnSignup: true
+        }
+    },
     methods: {
         goToLogin: function(){
             this.$router.push("/login");
+            this.btnLogin = false;
+            this.btnSignup = true;
         },
         goToSignUp: function(){
             this.$router.push("/sign-up");
+            this.btnLogin = true;
+            this.btnSignup = false;
         },
         goToLogOut: function(){
             localStorage.removeItem("user_logged");
@@ -23,9 +33,9 @@ export default {
             <ul>
                 <li class="left"><h1><a href="./index.html">SCP Items shop</a></h1></li>
                 <li v-if="userlogged" class="left"><h3 id="user_info">Welcome {{userlogged}} </h3></li>
-                <li><a @click="goToLogOut"> <h3>Log-out</h3> </a></li>
-                <li><a @click="goToSignUp"> <h3>Sign-up</h3> </a></li>
-                <li><a @click="goToLogin"> <h3>Log-in</h3> </a></li>
+                <li v-if="userlogged"><a @click="goToLogOut"> <h3>Log-out</h3> </a></li>
+                <li v-if="btnSignup && !userlogged"><a @click="goToSignUp"> <h3>Sign-up</h3> </a></li>
+                <li v-if="btnLogin && !userlogged"><a @click="goToLogin"> <h3>Log-in</h3> </a></li>
             </ul>
         </nav>
     </div>

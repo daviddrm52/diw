@@ -21,11 +21,8 @@ export default {
                         localStorage.setItem("user_logged", JSON.parse(localStorage.getItem(this.email)).nickname);
                         this.$router.push("/products");
                         this.$emit("updateuserlogged");
-                        //console.log(JSON.parse(localStorage.getItem(this.email)).nickname);
-                        //console.log(this.$emit("updateuserlogged"));
                     }                    
                 } else {
-                    //document.getElementById("errorMessage").innerHTML = "The email or the password are not correct!";
                     this.errorMessage = "The email or the password are not correct!";
                 }
             }
@@ -36,6 +33,7 @@ export default {
         <form>
             <h2> Log-in </h2>
             <input type="email" v-model="email" id="emailLogin" placeholder="Email">
+            <div id="errorMessage"></div>
             <input type="password" v-model="password" id="passwordLogin" placeholder="Password" autocomplete="on">
             <div id="errorMessage">{{errorMessage}}</div>
             <button class="form-btn" @click="logInUser"><h4>Log-in</h4></button>

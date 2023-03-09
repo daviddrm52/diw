@@ -8,7 +8,8 @@ export default {
             nickname: '',
             password: '',
             confirmPassword: '',
-            errorMessage: ''
+            errorMessage: '',
+            errorEmail: ''
         }
     },
     methods: {
@@ -16,24 +17,26 @@ export default {
             var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             e.preventDefault();
             if (this.email === '' || this.nickname === '' || this.password === '' || this.confirmPassword === '') {
-                //document.getElementById("errorMessage").innerHTML = "There are inputs empty!";
                 this.errorMessage = "There are inputs empty!";
             } else if (this.email.match(validRegex)) {
-                if(this.password === this.confirmPassword){
-                    var user = {nickname: this.nickname, password: this.password}
-                    localStorage.setItem(this.email, JSON.stringify(user));
-                    //document.getElementById("errorMessage").innerHTML = "";
-                    this.errorMessage = "";
-                    //Añadir localStorage para ver si hay un usuario logeado
-                    localStorage.setItem("user_logged", this.nickname);
-                    this.$router.push("/products");
-                    this.$emit("updateuserlogged")
+                if(!this.email === localStorage.key(this.email)){
+                    if(this.password === this.confirmPassword){
+                        var user = {nickname: this.nickname, password: this.password}
+                        localStorage.setItem(this.email, JSON.stringify(user));
+                        this.errorMessage = "";
+                        //Añadir localStorage para ver si hay un usuario logeado
+                        localStorage.setItem("user_logged", this.nickname);
+                        this.$router.push("/products");
+                        this.$emit("updateuserlogged")
+                    } else {
+                      this.errorMessage = "The two passwords don't match!";
+                    }
                 } else {
-                  this.errorMessage = "The two passwords don't match!";
-                    //document.getElementById("errorMessage").innerHTML = "The two passwords don't match!";
+                    this.errorEmail = "This email is already registred!";
                 }
             } else {
-                this.errorMessage = "There are inputs that are incorrect!"
+                this.errorEmail = "The email doesn't follow the guidelines!";
+                this.errorMessage = "There are inputs that are incorrect!";
             };
         },
     },
@@ -42,8 +45,11 @@ export default {
         <form>
             <h2> Sign-up </h2>
             <input type="email" v-model="email" id="emailSignUp" required placeholder="Email...">
+            <div id="errorEmail">{{errorEmail}}</div>
             <input type="text" v-model="nickname" id="nicknameSignUp" required placeholder="Nickname...">
+            <div id="errorMessage"></div>
             <input type="password" v-model="password" id="passwordSignUp" required placeholder="Password..." autocomplete="on">
+            <div id="errorMessage"></div>
             <input type="password" v-model="confirmPassword" id="confirmPasswordSignUp" required placeholder="Confirm password..." autocomplete="on">
             <div id="errorMessage">{{errorMessage}}</div>
             <button class="form-btn" @click="signUpUser"><h4>Sign-up</h4></button>
