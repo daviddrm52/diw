@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/pinia"></script>
+    <script src="https://unpkg.com/vue-demi"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
     <title>Activity 4 - UD7 - David Rueda Madrid</title>
@@ -19,6 +21,9 @@
     <script type="module">
         import router from "./router.js";
         import componentHeader from "./js/Header.js";
+
+        import store from "./js/store.js";
+        const pinia = Pinia.createPinia();
 
         const app = Vue.createApp({
             data() {
@@ -47,18 +52,9 @@
                 this.verifing_user();
             }
         });
+        app.use(pinia);
         app.use(router);
         app.mount('#app');
     </script>
 </body>
 </html>
-
-<!--
-
-    Hacer que no sea necesario recargar la pagina cuando hay un login o signup: check
-    Evitar que todo el localStorage se borre al hacer log-out: check
-    Hacer que el log-out funcione totalmente: check
-    Hacer que solo salga un boton en cada vista: check
-    Verificar que el email es correcto: check 
-
--->

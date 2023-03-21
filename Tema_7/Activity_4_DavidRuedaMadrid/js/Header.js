@@ -22,6 +22,8 @@ export default {
         goToLogOut: function(){
             localStorage.removeItem("user_logged");
             this.$router.push("/login");
+            this.btnLogin = false;
+            this.btnSignup = true;
             //Aquí falta hacer un emit para actualizar el valor de userlogged desde el padre:
             //También se podría llamar a verifing_user, en lugar de hacer el this.$router.push aquí
             this.$emit("updateuserlogged");

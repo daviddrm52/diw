@@ -19,7 +19,7 @@ export default {
             if (this.email === '' || this.nickname === '' || this.password === '' || this.confirmPassword === '') {
                 this.errorMessage = "There are inputs empty!";
             } else if (this.email.match(validRegex)) {
-                if(!this.email === localStorage.key(this.email)){
+                if(localStorage.key(this.email) != null){
                     if(this.password === this.confirmPassword){
                         var user = {nickname: this.nickname, password: this.password}
                         localStorage.setItem(this.email, JSON.stringify(user));
