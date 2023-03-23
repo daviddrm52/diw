@@ -6,23 +6,28 @@ export default {
         return{
             email: '',
             password: '',
-            errorMessage: ''
+            errorMessage: '',
+            usersArray: JSON.parse(localStorage.getItem("users"))
         }
     },
     methods: {
         logInUser: function(e){
             e.preventDefault();
-            if(this.email != '' || this.password != ''){                
-                var registedPassword = JSON.parse(localStorage.getItem("users")).password;
-                var registredEmail = JSON.parse(localStorage.getItem("users")).email;
+            console.log(this.usersArray);
+            if(this.email != null || this.password != null){                
                 
+                var usersData = JSON.parse(localStorage.getItem("users"));
+                let mapsEmail = usersData.map(a => a.email);
+                let mapsPassword = usersData.map(a => a.password);
+                console.log(usersData);
+                console.log(mapsEmail);
+                console.log(mapsPassword);
+
                 console.log(this.email);
                 console.log(this.password);
-                console.log(registredEmail);
-                console.log(registedPassword);
 
-                if(this.email === registredEmail){
-                    if(this.password === registedPassword){
+                if(this.email === mapsEmail){
+                    if(this.password === mapsPassword){
                         localStorage.setItem("user_logged", JSON.parse(localStorage.getItem("users")).nickname);
                         this.$router.push("/products");
                         this.$emit("updateuserlogged");
@@ -32,33 +37,6 @@ export default {
                 }
             } else {
                 this.errorMessage = "There are inputs empty!";
-
-                //TODO: estructura cambiada del ls, hacerlo con un array, al hacer nuevo signup, se elimina el anterior
-    
-                // var passwordLocalStorage = JSON.parse(localStorage.getItem(this.email)).password;
-                // console.log(passwordLocalStorage);
-                // var emailLocalStorage = localStorage.key(this.email);
-                // console.log(emailLocalStorage);
-                // console.log(this.email);
-
-                // var bol;
-                // if(this.email == emailLocalStorage){
-                //     bol = true;
-                //     console.log(bol);
-                // } else {
-                //     bol = false;
-                //     console.log(bol);
-                // };
-
-                // if(this.email === localStorage.key(this.email)){
-                //     if(this.password === passwordLocalStorage){
-                //         localStorage.setItem("user_logged", JSON.parse(localStorage.getItem(this.email)).nickname);
-                //         this.$router.push("/products");
-                //         this.$emit("updateuserlogged");
-                //     }                    
-                // } else {
-                //     this.errorMessage = "The email or the password are not correct!";
-                // }
             }
         }  
     },

@@ -10,12 +10,13 @@ export default {
             confirmPassword: '',
             errorMessage: '',
             errorEmail: '',
-            //arrayUsuarios: []
+            usersArray: JSON.parse(localStorage.getItem("users"))
         }
     },
     methods: {
         signUpUser: function(e){
             var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            console.log(this.usersArray);
             localStorage.setItem("users", null);
             e.preventDefault();
             if (this.email === '' || this.nickname === '' || this.password === '' || this.confirmPassword === '') {
@@ -23,13 +24,17 @@ export default {
             } else if (this.email.match(validRegex)) {
                 if(this.email != localStorage.getItem("users").email){
                     if(this.password === this.confirmPassword){
-                        var user = {email: this.email, nickname: this.nickname, password: this.password}
-                        localStorage.setItem("users", JSON.stringify(user));
+                        var newUser = {email: this.email, nickname: this.nickname, password: this.password}
+                        if(this.usersArray === null){
+                            this.usersArray = [];
+                        }
+                        this.usersArray.push(newUser);
+                        localStorage.setItem("users", JSON.stringify(this.usersArray));
                         this.errorMessage = "";
                         //Añadir localStorage para ver si hay un usuario logeado
                         localStorage.setItem("user_logged", this.nickname);
                         this.$router.push("/products");
-                        this.$emit("updateuserlogged")
+                        this.$emit("updateuserlogged");
                     } else {
                       this.errorMessage = "The two passwords don't match!";
                     }

@@ -52,8 +52,7 @@
                 this.verifing_user();
             }
         });
-        app.use(pinia);
-        app.use(router);
+        app.use(router, pinia);
         app.mount('#app');
     </script>
 </body>
