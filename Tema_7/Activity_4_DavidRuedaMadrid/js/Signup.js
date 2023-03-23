@@ -9,20 +9,22 @@ export default {
             password: '',
             confirmPassword: '',
             errorMessage: '',
-            errorEmail: ''
+            errorEmail: '',
+            //arrayUsuarios: []
         }
     },
     methods: {
         signUpUser: function(e){
             var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            localStorage.setItem("users", null);
             e.preventDefault();
             if (this.email === '' || this.nickname === '' || this.password === '' || this.confirmPassword === '') {
                 this.errorMessage = "There are inputs empty!";
             } else if (this.email.match(validRegex)) {
-                if(localStorage.key(this.email) != null){
+                if(this.email != localStorage.getItem("users").email){
                     if(this.password === this.confirmPassword){
-                        var user = {nickname: this.nickname, password: this.password}
-                        localStorage.setItem(this.email, JSON.stringify(user));
+                        var user = {email: this.email, nickname: this.nickname, password: this.password}
+                        localStorage.setItem("users", JSON.stringify(user));
                         this.errorMessage = "";
                         //Añadir localStorage para ver si hay un usuario logeado
                         localStorage.setItem("user_logged", this.nickname);

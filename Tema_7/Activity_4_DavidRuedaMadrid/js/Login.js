@@ -13,8 +13,8 @@ export default {
         logInUser: function(e){
             e.preventDefault();
             if(this.email != '' || this.password != ''){                
-                var registedPassword = JSON.parse(localStorage.getItem(this.email)).password;
-                var registredEmail = JSON.parse(localStorage.getItem(this.email)).email;
+                var registedPassword = JSON.parse(localStorage.getItem("users")).password;
+                var registredEmail = JSON.parse(localStorage.getItem("users")).email;
                 
                 console.log(this.email);
                 console.log(this.password);
@@ -23,7 +23,7 @@ export default {
 
                 if(this.email === registredEmail){
                     if(this.password === registedPassword){
-                        localStorage.setItem("user_logged", JSON.parse(localStorage.getItem(this.email)).nickname);
+                        localStorage.setItem("user_logged", JSON.parse(localStorage.getItem("users")).nickname);
                         this.$router.push("/products");
                         this.$emit("updateuserlogged");
                     }                    
@@ -33,9 +33,8 @@ export default {
             } else {
                 this.errorMessage = "There are inputs empty!";
 
-                //TODO: fixear el login, si no es posible, cambiar estructura del localStorage
-
-
+                //TODO: estructura cambiada del ls, hacerlo con un array, al hacer nuevo signup, se elimina el anterior
+    
                 // var passwordLocalStorage = JSON.parse(localStorage.getItem(this.email)).password;
                 // console.log(passwordLocalStorage);
                 // var emailLocalStorage = localStorage.key(this.email);
