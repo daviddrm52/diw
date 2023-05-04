@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
+    <title>Activity 4 - UD7 - David Rueda Madrid</title>
+</head>
+<body>
+    <div id="app">
+        <component-header :userlogged="user_logged" @updateuserlogged="updateUserLogged"></component-header>
+        <router-view :userlogged="user_logged" @updateuserlogged="updateUserLogged"></router-view>
+    </div>
+    
+    <script type="module">
+        import router from "./router.js";
+        import componentHeader from "./js/Header.js";
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    user_logged: null,
+                }
+            },
+            components: {
+                componentHeader,
+            },
+            methods: {
+                verifing_user: function(){
+                    this.updateUserLogged();
+                    if(this.user_logged !== null){
+                        this.$router.push("/products");
+                    } else {
+                        this.$router.push("/login");
+                    }
+                },
+                updateUserLogged: function(){
+                    this.user_logged = localStorage.getItem("user_logged");
+                    console.log(this.user_logged);
+                }
+            },
+            mounted(){
+                this.verifing_user();
+            }
+        });
+        app.use(router);
+        app.mount('#app');
+    </script>
+</body>
+</html>
